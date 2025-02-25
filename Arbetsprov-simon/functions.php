@@ -70,3 +70,8 @@ function text_till_linkedin($item_output, $item, $depth, $args) {
 
 add_filter('walker_nav_menu_start_el' , 'text_till_linkedin', 10, 4);
 
+
+function my_acf_json_save_point( $path ) {
+    return get_stylesheet_directory() . '/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
